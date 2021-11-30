@@ -1,11 +1,6 @@
 pipeline {
 //	agent any
-    agent { 
-		docker { 
-			label 'main'
-			image 'maven:3.6.3' 
-			
-			} 
+    agent { docker { image 'maven:3.6.3' } 
 	}
 	stages {
 		stage ('Build'){
