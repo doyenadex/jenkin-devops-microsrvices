@@ -2,6 +2,7 @@ pipeline {
 //	agent any
     agent { 
 		docker { 
+			label 'master'
 			image 'maven:3.6.3' 
 		} 
 	}
