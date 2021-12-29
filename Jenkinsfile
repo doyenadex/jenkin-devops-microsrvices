@@ -48,7 +48,7 @@ environment{
 				sh "mvn package -DskipTests"
 			}			
 		}
-		
+
 		stage('Build Docker Image'){
 		    steps{
 				//"docker build -t aademule/currency-exchange-devops:$env.BUILD_TAG"
@@ -62,8 +62,8 @@ environment{
 		    steps{
 				script{
 					docker.withRegistry('', 'dockerhub') {
-					dockerImage.Push();
-					dockerImage.Push('latest');
+					dockerImage.Push()
+					dockerImage.Push('latest')
 					}
 				}
 			}			
