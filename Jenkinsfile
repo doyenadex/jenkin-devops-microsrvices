@@ -9,7 +9,7 @@ agent any
 environment{
 	dockerHome = tool 'myDocker'
 	mavenHome = tool 'myMaven'
-	PATH = "$dockerHome/bin:$mavenHome/bin:$PATH "
+	PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
 }
 
 	stages {
@@ -35,7 +35,8 @@ environment{
 		stage ('Test'){
 			steps{
 				sh "mvn test"
-			}			
+			}	
+					
 		stage ('Integration Test'){
 			steps{
 				sh "mvn failsafe:integration-test failsafe:verify"
